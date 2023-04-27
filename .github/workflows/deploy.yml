@@ -7,7 +7,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name : Install Dependencies
-        run: cd blog-fe;npm ci
+        run: npm ci
       - name : Run Lint
         run: npm run lint
   test:
@@ -16,7 +16,7 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name : Install Dependencies
-        run: cd blog-fe;npm ci
+        run: npm ci
       - name : Run tests
         run: npm run test
   deploy:
@@ -26,6 +26,6 @@ jobs:
       - name: Get code
         uses: actions/checkout@v3
       - name : Install Dependencies
-        run: cd blog-fe;npm ci
+        run: npm ci
       - name : Deploy
         run: echo "Deploying"
