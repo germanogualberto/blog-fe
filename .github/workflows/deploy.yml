@@ -3,7 +3,9 @@ on:
   push:
     branches: ["main"]
   workflow_dispatch:
+
 jobs:
+
   lint:
     runs-on: ubuntu-latest
     steps:
@@ -13,6 +15,7 @@ jobs:
         run: npm ci
       - name : Run Lint
         run: npm run lint
+        
   test:
     runs-on: ubuntu-latest
     steps:
@@ -22,14 +25,16 @@ jobs:
         run: npm ci
       - name : Run tests
         run: npm run test
+        
   deploy:
     needs: [lint,test]
     runs-on: self-hosted
-    
+    environment: 
+      name: prod
+      url: ${{vars.address}}
     strategy:
       matrix:
         node-version: [18.x]
-        
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -44,3 +49,5 @@ jobs:
         run: npm run build
       - name : Run tests
         run: npm run test
+      - name : Deployed at ${{vars.address}}
+        run: echo "Deployed Successfully"
