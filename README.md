@@ -32,7 +32,7 @@ This project was developed using the following technologies
 ## :rocket: Deployed Version
 
 Its deployed in a Amazon EC2 instance using nginx and Github Actions for CI-CD. In the future its going to have a lot of texts created by me about stuff that I enjoy.</br>
-You can see the current state <a href="http://ec2-3-83-142-5.compute-1.amazonaws.com/" target="_blank">here</a>
+You can see the current state <a href="http://germanogualberto.com/" target="_blank">here</a>
 
 ## :rocket: Useful links and resources
 
